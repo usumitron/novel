@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>第1章・場面1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 18px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<hr>
+<h2 id="%E7%AC%AC1%E7%AB%A0%E3%83%BB%E5%A0%B4%E9%9D%A21-%E7%81%BC%E7%86%B1%E3%81%AE%E6%9C%9D">第1章・場面1　灼熱の朝</h2>
+<p>目を覚ました瞬間、胸にのしかかるような熱気に息が詰まった。エアコンはフル稼働しているはずなのに、部屋の温度は三十一度を下回らない。窓を開けるなど自殺行為だ。夜が明けたばかりだというのに、気象庁は「本日の最低気温三十五度」と告げていた。これがいま、2065年の日本の夏、いや、地球の夏だった。</p>
+<p>「……また寝汗で髪がぐちゃぐちゃだ」</p>
+<p>独り言を呟きながら、私は乱れたショートカットを指で整えた。ドライヤーで乾かす気力も奪われるほどの湿気と熱気。毎朝のこととはいえ、今日も一日この灼熱と向き合うのかと思うと、胸が重くなる。</p>
+<p>私は飯塚さくら、三十一歳。JAXAの研究職に就いてもう五年になる。博士論文は自然言語処理の分野で書いた。いまは情報工学を軸に、人工知能の解析応用を専門にしている。結婚はしていない。こんな生活では、誰かと暮らす余裕もない。</p>
+<p>ベッドから起き上がり、冷蔵庫からミネラルウォーターを取り出して一気に飲む。喉を通る冷たさが、一瞬だけ生き返らせてくれる。外はすでに太陽が暴れ始め、窓越しでも皮膚を刺すような熱を感じた。</p>
+<hr>
+<p>「ニュース」と声をかけると、空間に光が走り、ニュースキャスターが硬い表情で浮かび上がった。</p>
+<p>「ツバル、モルディブは完全に水没が確認されました。バングラデシュ沿岸の都市も住民の大半が高台へ避難しています……」</p>
+<p>私は歯を磨きながら画面に目をやった。海面は2000年時点から一・五メートル上昇している。大都市は防波堤を築いて延命しているが、それも限界に近い。祖父母が住んでいた横浜の沿岸地区も、すでに更地になって久しい。</p>
+<p>コーヒーを淹れる気力はなく、栄養ゼリーを口に流し込む。出勤までに体力を温存しておくことが何よりも大事だ。通常なら在宅勤務が中心だが、ここ数日は例外。数日前から発見された「国籍不明の飛行物体」のせいで、JAXAは連日警戒態勢だ。</p>
+<p>その物体は、翼を持つ航空機のような形をしていた。低軌道を周回する姿は世界中で観測され、各国が軍事的な緊張を強めている。ミサイルを発射すべきか、ただ観測に徹すべきか、意見は割れていた。</p>
+<p>「……まったく、なんでこんな時に」</p>
+<p>私たちは温暖化で手一杯なのに、空から新しい問題が降ってきた。</p>
+<hr>
+<p>出勤準備を終えると、私は玄関のラックから「晴れコート」を手に取った。外側に太陽電池、内側にはペルチェ素子が仕込まれた特殊コート。通称・晴れコートは、直射日光の下でも体表を三十度前後に保ってくれる。この十年、日本人の必需品になった。</p>
+<p>ファスナーを上まで引き、フードを被ると、ひんやりとした冷気が頬をなでた。これがなければ一歩も外に出られない。</p>
+<p>玄関を出ると、突き刺すような光が全身を襲った。アスファルトは白く揺らめき、車のボディは金属を超えて炎の塊のようだ。遠くでサイレンが鳴っている。熱中症で搬送される人は、今では日常風景になった。</p>
+<p>「はぁ……」</p>
+<p>駅までの道のりを、コートの冷気にすがりながら歩く。地下鉄に入ると、冷房の冷気が押し寄せ、ようやく呼吸が楽になる。乗客たちは皆、汗まみれで、無言で、「ビジュア」と呼ばれるウェアラブルデバイスが瞳に発する映像を追っていた。</p>
+<p>ニュースアプリには「未確認飛行物体、依然として正体不明」「軍事衛星ではない可能性高まる」と見出しが並ぶ。心臓が不意に強く打った。もしもこれが地球外からの何かなら――。私は震える指先を握りしめた。</p>
+<hr>
+<p>JAXA本部に着く頃には、私はすっかり汗だくだった。警備員にIDを見せ、冷たい空気の研究棟に入る。廊下の壁には熱を防ぐための冷却パネルが並び、わずかに霧状の水が散布されていた。</p>
+<p>自分の研究室に入ると、空調の効いた空気が体を包む。コンピュータを起動し、メールを確認する。</p>
+<p>「今日こそ通常業務……とはいかないか」</p>
+<p>机の上の端末が赤く点滅している。未確認飛行物体の軌道解析のデータだ。ここ数日は毎朝これを眺め、AIでシミュレーションを走らせるのが私の仕事になっていた。</p>
+<p>ディスプレイの上で、銀色の翼を持った飛行体が青い軌道を描く。地球を周回するその姿は、美しくも不気味だった。</p>
+<p>「……今日も無事に回ってる。さて、どんな動きを見せてくるかな」</p>
+<p>私はマグカップを手に取り、ぬるくなった水を口に含んだ。今日も長い一日が始まる――そう思った、その時だった。</p>
+<p>研究棟全体に警報が鳴り響いた。</p>
+<p>「未確認飛行物体、軌道を変更！　大気圏への降下コースに入りました！」</p>
+<p>私はマグカップを取り落としそうになりながら、画面に目を凝らした。
+ついに、未知の存在が地球に触れようとしていた。</p>
+<hr>
+
+</body>
+</html>
