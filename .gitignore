@@ -1,3 +1,6 @@
 /temp
 /temp2
+/md
 *.xlsx
+*.md
+!README.md
